@@ -1,0 +1,169 @@
+
+package notaDoc;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class notADoc {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JComboBox comboBox;
+	private JComboBox<String> comboBox_1;
+	private JLabel show_result;
+	private JLabel show_result1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					notADoc window = new notADoc();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public notADoc() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		frame.setBounds(100, 100, 829, 542);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		JLabel lblNotADoctor = new JLabel("Not A Doctor");
+		lblNotADoctor.setBackground(Color.GREEN);
+		lblNotADoctor.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		lblNotADoctor.setBounds(344, 13, 153, 29);
+		frame.getContentPane().add(lblNotADoctor);
+
+		comboBox = new JComboBox();
+		comboBox.setBounds(509, 225, 163, 29);
+		frame.getContentPane().add(comboBox);
+		comboBox.addItem("fever");
+		comboBox.addItem("cough");
+		comboBox.addItem("sore throat");
+		comboBox.addItem("fatigue");
+		comboBox.addItem("headaches");
+		comboBox.addItem("swollen tonsils");
+		comboBox.addItem("sneezing");
+		comboBox.addItem("painful swallowing");
+		comboBox.addItem("congestion");
+		comboBox.addItem("malaise");
+		comboBox.addItem("body aches");
+		comboBox.addItem("itchy nose");
+		comboBox.addItem("rash");
+		comboBox.addItem("hives");
+		comboBox.addItem("vomitting");
+
+		JLabel lblEnterYourSymptoms = new JLabel("Select a symptom");
+		lblEnterYourSymptoms.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblEnterYourSymptoms.setBounds(298, 225, 173, 29);
+		frame.getContentPane().add(lblEnterYourSymptoms);
+
+		JLabel label = new JLabel("Select a symptom");
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		label.setBounds(298, 296, 173, 29);
+		frame.getContentPane().add(label);
+
+		comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(509, 296, 163, 29);
+		frame.getContentPane().add(comboBox_1);
+		comboBox_1.addItem("fever");
+		comboBox_1.addItem("cough");
+		comboBox_1.addItem("sore throat");
+		comboBox_1.addItem("fatigue");
+		comboBox_1.addItem("headaches");
+		comboBox_1.addItem("swollen tonsils");
+		comboBox_1.addItem("sneezing");
+		comboBox_1.addItem("painful swallowing");
+		comboBox_1.addItem("congestion");
+		comboBox_1.addItem("malaise");
+		comboBox_1.addItem("body aches");
+		comboBox_1.addItem("itchy nose");
+		comboBox_1.addItem("rash");
+		comboBox_1.addItem("hives");
+		comboBox_1.addItem("vomitting");
+
+		JLabel lblNewLabel = new JLabel("This platform is created to provide you with diagnosis system. \r\n");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		lblNewLabel.setBounds(12, 48, 799, 46);
+		frame.getContentPane().add(lblNewLabel);
+
+		JLabel lblNewLabel_1 = new JLabel(
+				"All diagnosis should be verified with your doctor before taking any medications. \r\n");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		lblNewLabel_1.setBounds(12, 87, 799, 46);
+		frame.getContentPane().add(lblNewLabel_1);
+
+		JLabel lblAnyChronicSymptom = new JLabel("Any chronic symptom should be reported to your doctor. ");
+		lblAnyChronicSymptom.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		lblAnyChronicSymptom.setBounds(12, 131, 645, 38);
+		frame.getContentPane().add(lblAnyChronicSymptom);
+
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				show_result.setText(comboBox.getSelectedItem().toString());
+				show_result1.setText(comboBox_1.getSelectedItem().toString());
+				
+			}
+
+		});
+		btnSubmit.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnSubmit.setBounds(361, 405, 97, 25);
+		frame.getContentPane().add(btnSubmit);
+
+		JLabel lblNewLabel_2 = new JLabel("Enter any other symptoms");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(298, 359, 181, 25);
+		frame.getContentPane().add(lblNewLabel_2);
+
+		textField = new JTextField();
+		textField.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		textField.setBounds(509, 359, 163, 25);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+
+		JLabel lblHereIsYour = new JLabel("Here is your diagnosis");
+		lblHereIsYour.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		lblHereIsYour.setBounds(86, 445, 163, 25);
+		frame.getContentPane().add(lblHereIsYour);
+
+		show_result = new JLabel("");
+		show_result.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		show_result.setBounds(330, 443, 220, 29);
+		frame.getContentPane().add(show_result);
+
+		show_result1 = new JLabel("");
+		show_result1.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		show_result1.setBounds(592, 441, 186, 41);
+		frame.getContentPane().add(show_result1);
+	}
+}
